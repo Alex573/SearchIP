@@ -8,3 +8,15 @@
 * 192.168.0.2
 * 192.168.0.3
 * 192.168.0.4
+
+Test task:
+* The input to the program specifies the IP address, the program tries all
+    valid addresses within the entered range and displays them on the screen.
+* Example:
+    the user enters from the keyboard
+    192.168.0.1 и 192.168.0.5
+* The program must issue
+* 192.168.0.2
+* 192.168.0.3
+* 192.168.0.4
+
