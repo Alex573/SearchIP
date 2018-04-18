@@ -6,6 +6,9 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Finding Ip addresses in a specified range
+ */
 public class SearchIP {
 
     public static void main(String[] args) {
@@ -20,10 +23,17 @@ public class SearchIP {
         } catch (UnknownHostException e) {
             System.out.println("Incorrectly entered IP address");
         }
-
-
     }
 
+    /**
+     * Finding Ip addresses in a specified range
+     * and in list
+     *
+     * @param ip1 first ip address String
+     * @param ip2 second ip address String
+     * @return list ip address in range
+     * @throws UnknownHostException when line is not ip address
+     */
     public static ArrayList<String> getIpList(String ip1, String ip2) throws UnknownHostException {
 
         ArrayList<String> list = new ArrayList<>();
@@ -42,7 +52,15 @@ public class SearchIP {
         return list;
     }
 
-
+    /**
+     * Returns a number from ip
+     *
+     * @param stringIp ip address
+     * @return ip address in long number
+     * @throws UnknownHostException returns a number from ip
+     *                              <p>
+     *                              taken from https://ru.stackoverflow.com/a/454427
+     */
     private static long ipToLong(String stringIp) throws UnknownHostException {
 
         InetAddress address = InetAddress.getByName(stringIp);
@@ -52,6 +70,15 @@ public class SearchIP {
         return (long) bb.getInt();
     }
 
+    /**
+     * Returns a number from ip
+     *
+     * @param longIp number
+     * @return long number in ip address string
+     * @throws UnknownHostException returns a number from ip
+     *                              <p>
+     *                              taken from https://ru.stackoverflow.com/a/454427
+     */
     private static String longToIp(long longIp) throws UnknownHostException {
 
         ByteBuffer bb = ByteBuffer.allocate(4).putInt((int) longIp);
